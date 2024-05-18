@@ -3,12 +3,12 @@ import 'package:flutter_tasks/bloc/users_events.dart';
 import 'package:flutter_tasks/bloc/users_state.dart';
 import 'package:flutter_tasks/api_repository/api_repository.dart';
 
-class UsersBloc extends Bloc<UsersEvents, UsersState> {
+class UsersBloc extends Bloc<UserEvents, UsersState> {
   UsersBloc() : super(UsersInitial()) {
-    on<FetchUsers>(_onFetchUsers);
+    on<FetchUser>(_onFetchUsers);
   }
 
-  void _onFetchUsers(FetchUsers event, Emitter<UsersState> emit) async {
+  void _onFetchUsers(FetchUser event, Emitter<UsersState> emit) async {
     ApiRepository usersRepository = ApiRepository();
     emit(UsersLoading());
     try {

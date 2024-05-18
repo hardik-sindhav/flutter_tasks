@@ -46,12 +46,12 @@ class _ReposPageState extends State<ReposPage> {
                   return ListView.builder(
                       itemCount: state.repos.length,
                       itemBuilder: (context, index) {
-                        final user = state.repos[index];
+                        final repo = state.repos[index];
                         return ReposListView(
                             index: index,
-                            userName: user.name ?? '',
-                            starCount: user.stargazersCount ?? 0,
-                            userRepoUrl: user.htmlUrl ?? '');
+                            userName: repo.name ?? '',
+                            starCount: repo.stargazersCount ?? 0,
+                            userRepoUrl: repo.htmlUrl ?? '');
                       });
                 } else if (state is ReposError) {
                   return const ErrorView("Something Went Wrong !",

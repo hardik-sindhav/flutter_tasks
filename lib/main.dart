@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tasks/api_repository/api_repository.dart';
 import 'package:flutter_tasks/bloc/repos_bloc.dart';
+import 'package:flutter_tasks/bloc/search_bloc.dart';
 import 'package:flutter_tasks/bloc/users_bloc.dart';
 import 'package:flutter_tasks/pages/splash_page.dart';
 
@@ -17,6 +18,9 @@ void main() {
       ),
       BlocProvider(
         create: (context) => ReposBloc(),
+      ),
+      BlocProvider(
+        create: (context) => SearchBloc(),
       ),
     ],
     child: const MyApp(),

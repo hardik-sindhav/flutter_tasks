@@ -7,11 +7,13 @@ import '../helper/responsive_sizer.dart';
 
 class SearchTextField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
-  const SearchTextField({super.key, this.onChanged});
+  final TextEditingController? textEditingController;
+  const SearchTextField({super.key, this.onChanged, this.textEditingController});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: textEditingController,
       onChanged: onChanged,
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();

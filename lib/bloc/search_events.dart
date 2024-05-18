@@ -1,16 +1,16 @@
 import 'package:equatable/equatable.dart';
 
-abstract class UserEvents extends Equatable {
-  const UserEvents();
+abstract class SearchEvents extends Equatable {
+  const SearchEvents();
 
   @override
   List<Object> get props => [];
 }
 
-class FetchUser extends UserEvents {
+class GetUser extends SearchEvents {
   final String username;
 
-  const FetchUser({required this.username});
+  const GetUser({required this.username});
 
   @override
   List<Object> get props => [username];
