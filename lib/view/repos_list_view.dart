@@ -37,10 +37,14 @@ class ReposListView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "${index + 1}. $userName",
-                style: AppTextStyle().poppinsSemiBold(
-                    context: context, fontSize: FontsSize.font18),
+              SizedBox(
+                width: MediaQuery.of(context).size.width/1.5,
+                child: Text(
+                  overflow: TextOverflow.ellipsis,
+                  "${index + 1}. $userName",
+                  style: AppTextStyle().poppinsSemiBold(
+                      context: context, fontSize: FontsSize.font18),
+                ),
               ),
               const SizedBox(
                 height: 5,
